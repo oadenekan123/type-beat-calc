@@ -12,10 +12,22 @@ It's a 1.8 GB subset of the MillionSongDataSet. We will be doing some preliminar
 """
 
 # Necessary Imports.
+#%% importing things
 import h5py
 import pandas as pd
+import pydrive
 
 # Mount Google Drive. Currently the subset is stored on a shared Google Drive Folder.
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+#%% load data
+
+
+gauth = GoogleAuth()
+gauth.LocalWebserverAuth() # client_secrets.json need to be in the same directory as the script
+drive = GoogleDrive(gauth)
+
+
 from google.colab import drive
 drive.mount('/content/drive')
 
@@ -23,11 +35,13 @@ filepath = '/content/drive/My Drive/TYPE BEAT CALC/MillionSongSubset/A/R/A/TRARA
 
 f = h5py.File(filepath, 'r')
 
+#%% idk
 list(f.keys())
 analysis = f['analysis']
 metadata = f['metadata']
 musicbrainz = f['musicbrainz']
 
+#%% printing shit
 print('Analysis Keys')
 for k in analysis.keys():
   print(k)

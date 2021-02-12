@@ -1,0 +1,12 @@
+name: type_beat_conda_env
+dependencies:
+  - ipykernel
+  - pylint
+  - numpy
+  - matplotlib
+  - biopython
+  - pywin32
+  - tornado
+  - pandas
+  - scikit-learn
+  - keras
