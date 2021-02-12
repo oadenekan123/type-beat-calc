@@ -5,7 +5,6 @@ dependencies:
   - numpy
   - matplotlib
   - biopython
-  - pywin32
   - tornado
   - pandas
   - scikit-learn
